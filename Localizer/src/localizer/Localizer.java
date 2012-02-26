@@ -15,11 +15,11 @@ public class Localizer {
      */
     public double[][] p;
     private double[][] world;
-    private static final double pHit = .8;
-    private static final double pMiss = .2;
-    private static final double pExact = .9;
-    private static final double pUnder = .1;
-    private static final double pOver = .1;
+    public double pHit = 1;//.8;
+    public double pMiss = 0;//.2;
+    public double pExact = 1;//.9;
+    public double pUnder = 0;//.1;
+    public double pOver = 0;//.1;
     
     public Localizer(double[][] world) {
         this.world = world;
@@ -55,7 +55,7 @@ public class Localizer {
             for(int y=0;y<p.length;y++) {
                 for(int x=0;x<p[y].length;x++) {
                     double num = q[y][circle(x-u2, q[y].length)] * pExact
-                    + q[y][circle(x-u2-1, q[y].length)] * pUnder
+                    + q[y][circle(x-u2-(u2/Math.abs(u2)), q[y].length)] * pUnder
                     + q[y][circle(x, q[y].length)] * pOver;
                     
                     p[y][x] = num;
@@ -68,8 +68,9 @@ public class Localizer {
                 for(int x=0;x<p[y].length;x++) {
                     //System.out.println(circle(y-u1, q.length));
                     double num = q[circle(y-u1, q.length)][x] * pExact
-                    + q[circle(y-u1-1, q.length)][x] * pUnder
+                    + q[circle(y-u1-(u1/Math.abs(u1)), q.length)][x] * pUnder
                     + q[circle(y, q.length)][x] * pOver;
+                    
                     p[y][x] = num;
                 }
             }
