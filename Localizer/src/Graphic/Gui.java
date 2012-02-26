@@ -5,8 +5,6 @@
 package Graphic;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +12,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import localizer.Localizer;
-import sun.util.BuddhistCalendar;
 
 /**
  *
@@ -37,7 +34,7 @@ public class Gui extends javax.swing.JFrame {
         image = new BufferedImage(width*(pixel+spacing), height*(pixel+spacing), BufferedImage.BITMASK);
         graphics = (Graphics2D)image.getGraphics();
         world = new double[height][width];
-        FileReader reader = new FileReader("C:\\Cygwin\\home\\Michael\\Localizer\\info.txt");
+        FileReader reader = new FileReader("info.txt");
         
         
         int i = 0;
