@@ -15,11 +15,11 @@ public class Localizer {
      */
     public double[][] p;
     private double[][] world;
-    public double pHit = 1;//.8;
-    public double pMiss = 0;//.2;
-    public double pExact = 1;//.9;
-    public double pUnder = 0;//.1;
-    public double pOver = 0;//.1;
+    public double pHit = .8;
+    public double pMiss = .2;
+    public double pExact = .9;
+    public double pUnder = .1;
+    public double pOver = .1;
     
     public Localizer(double[][] world) {
         this.world = world;
