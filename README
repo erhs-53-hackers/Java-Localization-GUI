@@ -1,0 +1,6 @@
+A sample localization program with a GUI in Java
+
+[0,1] -> right
+[0,-1]-> left
+[1,0] -> down
+[-1,0]-> up
